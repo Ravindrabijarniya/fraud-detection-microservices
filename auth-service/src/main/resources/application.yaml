@@ -1,0 +1,42 @@
+server:
+  port: 8081
+
+jwt:
+  secret: my-super-secret-key-123456789012345678902
+  expiration: 86400000
+
+spring:
+  application:
+    name: auth-service
+
+  datasource:
+    url: jdbc:mysql://mysql:3306/auth_db
+    username: auth_user
+    password: auth123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+
+#
+#    security:
+#    oauth2:
+#      client:
+#        registration:
+#          google:
+#            client-id: YOUR_GOOGLE_CLIENT_ID
+#            client-secret: YOUR_GOOGLE_CLIENT_SECRET
+#            scope: openid, profile, email
+#
+#          github:
+#            client-id: YOUR_GITHUB_CLIENT_ID
+#            client-secret: YOUR_GITHUB_CLIENT_SECRET
+#            scope: read:user, user:email
+
